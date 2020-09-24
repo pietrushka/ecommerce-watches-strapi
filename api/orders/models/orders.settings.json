@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "orders"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "items": {
+      "type": "json"
+    },
+    "methods": {
+      "type": "json"
+    },
+    "personalData": {
+      "type": "json"
+    }
+  }
+}

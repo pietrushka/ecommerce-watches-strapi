@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipping_options",
+  "info": {
+    "name": "shipping-options"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}
