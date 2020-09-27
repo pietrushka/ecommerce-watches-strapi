@@ -17,6 +17,9 @@
     },
     "personalData": {
       "type": "json"
+    },
+    "userId": {
+      "type": "uid"
     }
   }
 }

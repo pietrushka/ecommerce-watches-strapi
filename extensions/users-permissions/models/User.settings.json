@@ -55,6 +55,9 @@
     },
     "orders": {
       "collection": "orders"
+    },
+    "watches": {
+      "collection": "watches"
     }
   }
 }
