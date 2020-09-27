@@ -56,7 +56,7 @@
     "orders": {
       "collection": "orders"
     },
-    "watches": {
+    "favorites": {
       "collection": "watches"
     }
   }
