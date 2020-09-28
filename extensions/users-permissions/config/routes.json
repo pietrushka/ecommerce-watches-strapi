@@ -10,6 +10,15 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/users/getMyCart",
+      "handler": "User.getMyCart",
+      "config": {
+        "policies": [],
+        "prefix": ""
+      }
+    },
+    {
       "method": "PUT",
       "path": "/users/updateMe",
       "handler": "User.updateMe",

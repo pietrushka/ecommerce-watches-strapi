@@ -109,6 +109,17 @@ module.exports = {
     const slimUser = { favorites: user.favorites }
 
     ctx.body = sanitizeUser(slimUser)
+  },
+
+  async getMyCart (ctx) {
+    const user = ctx.state.user
+
+    if (!user) {
+      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }])
+    }
+    const slimUser = { cart: user.cart }
+
+    ctx.body = sanitizeUser(slimUser)
   }
 
 }

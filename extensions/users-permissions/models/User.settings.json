@@ -58,6 +58,9 @@
     },
     "favorites": {
       "collection": "watches"
+    },
+    "cart": {
+      "type": "json"
     }
   }
 }
