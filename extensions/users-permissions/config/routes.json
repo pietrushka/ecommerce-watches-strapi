@@ -1,6 +1,15 @@
 {
   "routes": [
     {
+      "method": "GET",
+      "path": "/users/getMyFavorites",
+      "handler": "User.getMyFavorites",
+      "config": {
+        "policies": [],
+        "prefix": ""
+      }
+    },
+    {
       "method": "PUT",
       "path": "/users/updateMe",
       "handler": "User.updateMe",

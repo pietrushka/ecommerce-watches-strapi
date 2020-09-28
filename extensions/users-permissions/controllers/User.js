@@ -11,6 +11,20 @@ const sanitizeUser = user =>
   })
 
 module.exports = {
+  async me (ctx) {
+    const user = ctx.state.user
+
+    if (!user) {
+      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }])
+    }
+
+    const { id, username, email } = user
+
+    const slimUser = { id, username, email }
+
+    ctx.body = sanitizeUser(slimUser)
+  },
+
   async updateMe (ctx) {
     const advancedConfigs = await strapi
       .store({
@@ -84,5 +98,17 @@ module.exports = {
     const data = await strapi.plugins['users-permissions'].services.user.edit({ id }, updateData)
 
     ctx.send(sanitizeUser(data))
+  },
+
+  async getMyFavorites (ctx) {
+    const user = ctx.state.user
+
+    if (!user) {
+      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }])
+    }
+    const slimUser = { favorites: user.favorites }
+
+    ctx.body = sanitizeUser(slimUser)
   }
+
 }
