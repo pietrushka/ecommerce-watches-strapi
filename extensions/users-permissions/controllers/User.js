@@ -111,6 +111,24 @@ module.exports = {
     ctx.body = sanitizeUser(slimUser)
   },
 
+  async myPopulatedFavorites (ctx) {
+    const user = ctx.state.user
+
+    if (!user) {
+      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }])
+    }
+
+    const id = user.id
+
+    const fetchedUser = await strapi.plugins['users-permissions'].services.user.fetch({ id })
+
+    if (!fetchedUser) {
+      return ctx.notFound('User does not exist');
+    }
+
+    ctx.body = {favorites: fetchedUser.favorites}
+  },
+
   async getMyCart (ctx) {
     const user = ctx.state.user
 
@@ -120,6 +138,16 @@ module.exports = {
     const slimUser = { cart: user.cart }
 
     ctx.body = sanitizeUser(slimUser)
-  }
+  },
 
+  async getMyOrders (ctx) {
+    const user = ctx.state.user
+
+    if (!user) {
+      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }])
+    }
+    const slimUser = { orders: user.orders }
+
+    ctx.body = sanitizeUser(slimUser)
+  }
 }

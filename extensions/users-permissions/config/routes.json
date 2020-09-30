@@ -11,6 +11,24 @@
     },
     {
       "method": "GET",
+      "path": "/users/myPopulatedFavorites",
+      "handler": "User.myPopulatedFavorites",
+      "config": {
+        "policies": [],
+        "prefix": ""
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users/getMyOrders",
+      "handler": "User.getMyOrders",
+      "config": {
+        "policies": [],
+        "prefix": ""
+      }
+    },
+    {
+      "method": "GET",
       "path": "/users/getMyCart",
       "handler": "User.getMyCart",
       "config": {

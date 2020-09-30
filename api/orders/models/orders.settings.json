@@ -18,8 +18,11 @@
     "personalData": {
       "type": "json"
     },
-    "userId": {
-      "type": "uid"
+    "paymentStatus": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
     }
   }
 }
