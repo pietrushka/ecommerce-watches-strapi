@@ -120,7 +120,7 @@ module.exports = {
 
     const id = user.id
 
-    const fetchedUser = await strapi.plugins['users-permissions'].services.user.fetch({ id }, ['orders'])
+    const fetchedUser = await strapi.plugins['users-permissions'].services.user.fetch({ id }, ['favorites'])
 
     if (!fetchedUser) {
       return ctx.notFound('User does not exist')

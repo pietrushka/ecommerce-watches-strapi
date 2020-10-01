@@ -3,13 +3,14 @@ const { sanitizeEntity } = require('strapi-utils')
 module.exports = {
   async getProductsForValidation (ctx) {
     const watches = await strapi.query('watches').find({ _limit: -1 })
-    const slimWatches = watches.map(({ id, brand, model, refCode, price, cover }) => {
+    const slimWatches = watches.map(({ id, brand, model, refCode, price, cover, images }) => {
       return {
         id,
         brand,
         model,
         refCode,
-        imageUrl: cover.url,
+        cover,
+        images,
         price
       }
     })
