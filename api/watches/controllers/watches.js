@@ -15,12 +15,5 @@ module.exports = {
       }
     })
     ctx.body = { products: slimWatches }
-  },
-
-  async getByRefCode (ctx) {
-    const { refCode } = ctx.params
-
-    const entity = await strapi.services.watches.findOne({ refCode })
-    return sanitizeEntity(entity, { model: strapi.models.watches })
   }
 }
