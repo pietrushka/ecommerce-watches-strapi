@@ -55,14 +55,6 @@
       "config": {
         "policies": []
       }
-    },
-    {
-      "method": "GET",
-      "path": "/watches/getByRefCode/:refCode",
-      "handler": "watches.getByRefCode",
-      "config": {
-        "policies": []
-      }
     }
   ]
 }
